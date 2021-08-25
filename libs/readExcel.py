@@ -1,10 +1,24 @@
 import pandas as pd 
 #importamos pandas 
 
-data = pd.read_excel('./pruebaProveedores.xlsx', header=None );
+# hacemos uso de la columna 3 para ahorrar tiempo de ejecución
+data = pd.read_excel('./pruebaProveedores.xlsx', header=None, names=['Proveedor', 'Producto' ,'Precio'] )
 
-data.head()
+# print(data[['Precio']])
+productos = data['Producto']
+proveedores = data['Proveedor']
 
-for col in data[3]:
-    if( type(col) == int ):
-        num1 = col
+print( productos )
+# print( type(productos) )
+
+# for col in productos:
+#     print(productos)
+
+# data.head()
+
+# for col in data:
+
+#     if( type(col) == int ):
+#             num1 = data[col]
+#             print(num1)
+
